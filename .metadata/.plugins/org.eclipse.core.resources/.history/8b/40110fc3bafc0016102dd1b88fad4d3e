@@ -1,0 +1,10 @@
+package org.ex.javabrains.messenger.model;
+
+import java.util.Date;
+
+public class Status {
+	 private long id;
+	   private String status_desc;
+	   private Date created;
+	   private String author;
+}

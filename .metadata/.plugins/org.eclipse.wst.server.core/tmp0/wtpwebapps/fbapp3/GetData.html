@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="Jquery/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="Jquery/jquery-ui.css"></script>
+<script type="text/javascript" src="Jquery/jquery-ui.js"></script>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+
+$(document).ready(function(){	
+var curPage = 1;
+var loading = false;
+var point = 5;
+window.onscroll = function(){
+	var height =  $(document).height();
+	var scroll = $(window).scroll();
+	var whigh = $(window).windowHieght();
+	console.log(height - scroll - whigh);
+	if(curPage >= 1 && !loading && ( height - scroll - whigh) < whigh) {
+		alert("calling");
+		loading = true;
+		console.log("height - scroll - windowHieght()");
+       	$.ajax({ 
+            url: "http://localhost:8080/SelectedLoad/webapi/user/retrive",
+            type: "GET",
+            dataType: "json",
+            contentType : "application/json",
+            crossDomain: true,
+            processData: true,
+            
+            
+            success: function(response){  
+                // we have the response  
+         	   if(response!=null){
+                var data =JSON.parse(JSON.stringify(response));  ;
+         	   var output1= "<ul class="+"list-group"+">";
+
+         	   for (i=0; i < data.length; i++){
+         	       output1 += "<li class="+"list-group-item"+">"+ data[i].userID + ", " + data[i].emailID + "</li>";
+         	       
+         	   }
+
+         	   output1 += "</ul>";
+         	   $("#output1").html(output1);
+         	   
+        		loading = false;
+                }  
+                
+                else
+             	   {
+             	  alert("some error in scroll");
+             	   }
+              },
+	    
+   			error: function(e){  
+     					alert('Error121212: ' + e);  
+     					alert(e.toString());
+   			}				
+     
+	  }); 
+	}
+	else
+		{
+		alert("scrolling");
+		loading = false;
+		}
+}
+
+
+
+$(function () {
+	    	
+	       	$.ajax({ 
+	                   url: "http://localhost:8080/SelectedLoad/webapi/user/retrive",
+	                   type: "GET",
+	                   dataType: "json",
+	                   contentType : "application/json",
+	                   crossDomain: true,
+	                   processData: true,
+	                   
+	                   
+	                   success: function(response){  
+	                	   
+	                       // we have the response  
+	                	   if(response!=null){
+	                       var data =JSON.parse(JSON.stringify(response));  ;
+	                	   var output= "<ul class="+"list-group"+">";
+
+	                	   for (i=0; i < data.length; i++){
+	                	       output += "<li class="+"list-group-item"+">"+ data[i].userID + ", " + data[i].emailID + "</li>";
+	                	       
+	                	   }
+
+	                	   output += "</ul>";
+	                	   $("#output").html(output);
+	               
+	                       }  
+	                       
+	                       else
+	                    	   {
+	                    	  var flag=1;
+	                    	   $.removeCookie("ID");
+	                  	       $.removeCookie("pwd1");
+	                    	   window.location.href = "login.html";
+	                    	   }
+	                     },
+	    	    
+	          			error: function(e){  
+	            					alert('Error121212: ' + e);  
+	            					alert(e.toString());
+	          			}				
+	            
+	    	  }); 
+	     	   
+    });	   
+});
+
+
+
+</script>
+
+<title>User home page</title>
+</head>
+<body>
+<div class="navbar navbar-default">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+			<h2 class="navbar-text" align="center">FACEBOOK</h2>
+		</div>
+</div>
+
+
+<a class="btn btn-primary" id="HomeButton" href="appHome.html">Go To Home</a>
+
+<div class="container">
+		<div class="jumbotron" align="center">
+		<div align="center" id="output">
+		
+				
+				<p id="output"></p><br>
+			
+				
+			</div>
+		
+<!--  		    <h2>File Upload Example</h2>  
+    <form action="webapi/files/upload" method="post" enctype="multipart/form-data">  
+           <p>  
+            Select a file : <input type="file" name="file" size="45" />  
+           </p>  
+           <input type="submit" value="Upload File" />  
+    </form>  
+-->				</div>
+
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>

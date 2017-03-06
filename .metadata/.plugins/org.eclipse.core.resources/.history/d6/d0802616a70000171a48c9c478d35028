@@ -1,0 +1,26 @@
+package com.fetch.fbapp3.service;
+
+import java.sql.SQLException;
+
+public class LikeIncrement {
+    
+	DBAccess db= new DBAccess();
+	public int incrementLike(Like likeobj){
+		boolean check=false;
+
+	    try{
+			  while(check!=true){
+				 System.out.println("trying connection in getStatus");
+				 check= db.start();
+				 
+			  }
+			  
+			String sql="insert into likes(?,?)"  
+			  return 1;
+		} catch (SQLException e) 
+	    {
+	        e.printStackTrace();
+	    }
+		 return 0;
+	}
+}

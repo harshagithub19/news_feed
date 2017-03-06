@@ -1,0 +1,7 @@
+package com.fetch.fbapp3.service;
+
+public class LikeIncrement {
+    
+	DBAccess db= new DBAccess();
+	
+}

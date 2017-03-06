@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.ui.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.cookie/1.3.1/jquery.cookie.js"></script>  
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+</style>     
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<!-- Main feed: A cell that spans 7 columns -->
+<div class="col-md-7">
+  <!-- Status update entry -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Status update entry
+    </div>
+  </div>
+  <!-- Status update #1 -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Status update #1
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>

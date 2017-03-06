@@ -1,0 +1,45 @@
+package com.fetch.fbapp3.service;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import com.fetch.fbapp3.model.Status;
+import com.fetch.fbapp3.model.likes;
+
+public class LikeDecrement {
+
+	 DBAccess db= new DBAccess();
+	 public int dislike(likes like_obj){
+        //String result;
+		 int user_id=like_obj.getLuserID();
+		 int status_id=like_obj.getLstatusID();
+		boolean check=false;
+		try{
+		  while(check!=true){
+			  System.out.println("trying connection");
+			 check= db.start();
+		  }
+		  String sql="select * from likes where userID= ? and statusID=?";
+		 
+		  PreparedStatement pstmnt=db.con.prepareStatement(sql);
+		  pstmnt.setInt(1,user_id); // user_id is the one sent in paramater
+		  pstmnt.setInt(2,status_id);
+		  ResultSet rs= pstmnt.executeQuery();
+		  while(rs.next())
+		  {
+			  String sql1="UPDATE likes SET flag=0 WHERE userID=? and statusID=?";
+				 
+			  PreparedStatement pstmnt1=db.con.prepareStatement(sql1);
+			  pstmnt1.setInt(1,user_id); // user_id is the one sent in paramater
+			  pstmnt1.setInt(2,status_id);
+			  pstmnt1.executeQuery();
+		  }
+		  
+		  db.stop();
+		  return 1;//success
+}
+catch(Exception e){
+			
+		}
+		return 0;//failure
+}
+}

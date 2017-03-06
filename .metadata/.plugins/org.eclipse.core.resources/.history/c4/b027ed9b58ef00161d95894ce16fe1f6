@@ -1,0 +1,25 @@
+.ReviewSuggestion
+{
+  float:left;
+  height: 100px;
+  width:250x; 
+  padding:3px; 
+  margin-bottom:5px;
+}
+
+.Respond
+{
+  float:left;
+  clear:left;
+  height: 100px;
+  
+  width:250px; 
+  padding:3px; 
+  
+}
+.Content
+{
+  height:224px;
+   overflow:auto;
+    background:#fff;
+}

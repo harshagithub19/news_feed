@@ -1,0 +1,12 @@
+package com.fetch.fbapp3.model;
+
+public class likes {
+
+	private int likeID;
+	private int statusID;
+	private int userID;
+	
+	
+	
+	
+}

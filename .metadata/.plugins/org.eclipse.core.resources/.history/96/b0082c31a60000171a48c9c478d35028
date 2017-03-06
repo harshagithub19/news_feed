@@ -1,0 +1,11 @@
+package com.fetch.fbapp3.service;
+
+public class LikeIncrement {
+    
+	DBAccess db= new DBAccess();
+	public int incrementLike(int stat_id){
+		boolean check=false;
+		while()
+		return 1;
+	}
+}

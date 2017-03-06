@@ -1,0 +1,41 @@
+package org.ex.javabrains.messenger.service;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class StatusService {
+	 DBAccess db= new DBAccess();
+	 public String getStatus(Long status_ID){
+		 String statusID=String.valueOf(status_ID);
+		
+		   boolean check=false;
+		   while(check!=true){
+			   System.out.println("trying connection");
+			   check= db.start();
+		   }
+		   String status_desc=null;
+		   PreparedStatement pstmnt= db.con.prepareStatement("select status_desc from status where statusID = ?");
+		   pstmnt.setString(1,statusID);
+		   ResultSet rs= pstmnt.executeQuery();
+		   if(rs!=null){
+			   status_desc=rs.getString(1);
+			   return status_desc;
+		   }
+		   else 
+			   return null;
+		   
+		   db.close();
+		   
+			      
+	   }
+	 public boolean addStatus(String status_desc , Long user_id){
+		 boolean check=false;
+		 while(check!=true){
+			 System.out.println("trying connection");
+			check= db.start();
+		 }
+		 String sql = "insert into status(statusID,status_desc,user_id) " +"values(?, ?, ?)";
+		 PreparedStatement pstmnt = db.con.prepareStatement(" ")
+		 return false;  
+   }
+}

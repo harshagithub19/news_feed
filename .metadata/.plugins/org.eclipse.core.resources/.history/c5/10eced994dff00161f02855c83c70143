@@ -1,0 +1,50 @@
+package com.fetch.fbapp3.model;
+
+public class comment {
+
+	private int commentID;
+	private int statusID;
+	private int userID;
+	private int flag;
+	
+	public comment(int commentID,int statusID,int userID,int flag)
+	{
+		this.commentID=commentID;
+		this.statusID=statusID;
+		this.userID=userID;	
+		this.flag=flag;
+	}
+
+	public int getCommentID() {
+		return commentID;
+	}
+
+	public void setCommentID(int commentID) {
+		this.commentID = commentID;
+	}
+
+	public int getStatusID() {
+		return statusID;
+	}
+
+	public void setStatusID(int statusID) {
+		this.statusID = statusID;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+	public int getFlag() {
+		return flag;
+	}
+
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
+	
+}

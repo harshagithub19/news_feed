@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-md-3 sidebar">
+   Sidebar Content
+  </div>
+  <div class="col-md-9 col-md-offset-3 content">
+   Main Content
+  </div>
+ </div>
+</div>
+
+</body>
+</html>

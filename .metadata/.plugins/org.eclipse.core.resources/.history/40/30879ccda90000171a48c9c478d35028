@@ -1,0 +1,30 @@
+package com.fetch.fbapp3.service;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.fetch.fbapp3.model.likes;
+
+public class LikeIncrement {
+    
+	DBAccess db= new DBAccess();
+	public int incrementLike(likes likeobj){
+		boolean check=false;
+
+	    try{
+			  while(check!=true){
+				 System.out.println("trying connection in LikeIncrement");
+				 check= db.start();
+				 
+			  }
+			  
+			String query1="select * from likes where statusID=? and userID=?";  
+			PreparedStatement pstmnt1=db.con.prepareStatement(query1)
+			  return 1;
+		} catch (SQLException e) 
+	    {
+	        e.printStackTrace();
+	    }
+		 return 0;
+	}
+}

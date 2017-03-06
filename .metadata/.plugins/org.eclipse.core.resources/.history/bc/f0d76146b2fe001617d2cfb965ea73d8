@@ -1,0 +1,19 @@
+package com.fetch.fbapp3.model;
+
+public class likes {
+
+	private int likeID;
+	private int statusID;
+	private int userID;
+	private int flag;
+	
+	public likes(int likeID,int statusID,int userID,int flag)
+	{
+		this.likeID=likeID;
+		this.statusID=statusID;
+		this.userID=userID;	
+		this.flag=flag;
+	}
+	
+	
+}

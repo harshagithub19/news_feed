@@ -1,0 +1,43 @@
+package org.ex.javabrains.messenger.model;
+
+import java.util.Date;
+
+public class Status {
+	 private long id;
+	   private String status_desc;
+	   private Date created;
+	   private long author_id;
+	   public Status(){
+		   
+	   }
+	   public Status(long status_id,String status_desc,long author_id){
+		   this.id=id;
+		   this.status_desc=status_desc;
+		   this.author_id=author_id;
+		   created=new Date();
+	   }
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getStatus_desc() {
+		return status_desc;
+	}
+	public void setStatus_desc(String status_desc) {
+		this.status_desc = status_desc;
+	}
+	public Date getCreated() {
+		return created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+	public long getAuthor_id() {
+		return author_id;
+	}
+	public void setAuthor_id(long author_id) {
+		this.author_id = author_id;
+	}
+}

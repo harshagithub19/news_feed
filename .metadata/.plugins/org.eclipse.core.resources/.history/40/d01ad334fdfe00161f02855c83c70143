@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.ui.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.cookie/1.3.1/jquery.cookie.js"></script>  
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+</style>     
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<!-- Main feed: A cell that spans 7 columns -->
+<div class="col-md-7">
+  <!-- Status update entry -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Status update entry
+    </div>
+  </div>
+  <!-- Status update #1 -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Status update #1
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active">
+        <a href="#"><span class="glyphicon glyphicon-pencil"></span> <strong>Update Status</strong></a>
+      </li>
+      <li role="presentation">
+        <a href="#"><span class="glyphicon glyphicon-picture"></span> <strong>Add Photos/Video</strong></a>
+      </li>
+      <li role="presentation">
+        <a href="#"><span class="glyphicon glyphicon-th"></span> <strong>Create Photo Album</strong></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

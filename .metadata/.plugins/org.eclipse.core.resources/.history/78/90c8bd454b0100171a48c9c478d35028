@@ -1,0 +1,5 @@
+package com.fetch.fbapp3.service;
+
+public class AddCommentService {
+
+}

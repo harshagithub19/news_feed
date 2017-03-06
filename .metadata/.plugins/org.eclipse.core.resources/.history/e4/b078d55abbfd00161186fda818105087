@@ -1,0 +1,60 @@
+package com.fetch.fbapp3.resources;
+
+import java.io.IOException;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fetch.fbapp3.model.Status;
+import com.fetch.fbapp3.service.StatusService;
+
+@WebService()
+@Path("/status")
+public class StatusResouce {
+    private StatusService ss;
+    public StatusResouce() {
+    	ss=new StatusService();
+	}
+ 
+    @POST
+    @Path("/add")
+    @WebMethod(operationName = "insert")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public boolean addStatus(Status status)throws JsonParseException, JsonMappingException, IOException{
+    	status.setStatus_desc(status.getStatus_desc());
+    	status.setAuthor_id(status.getAuthor_id());
+    	if(ss.addStatus(status)){
+    		return true;
+    	}
+    	else
+    		return false;
+    	
+    } // end of addStatus
+    
+    @PUT
+    @Path("/remove")
+	@WebMethod(operationName = "remove")
+	@Consumes({MediaType.APPLICATION_JSON})
+    public boolean removeStatus(Status status){
+    	System.out.println("updating user info");
+		//String output = "POST:Jersey say : " + msg;
+		status.setAuthor_id(status.getAuthor_id());
+		status.setCreated(status.getCreated());
+		status.setStatus_desc(status.getStatus_desc());
+		status.setStatusID(status.getStatusID());
+		status.setFlag(status.getFlag());
+		if(ss.removeStatus(status)){
+			return true;
+		}
+		return false;
+		
+    }
+    
+}

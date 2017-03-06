@@ -1,0 +1,32 @@
+package org.ex.javabrains.messenger.service;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class StatusService {
+   public static boolean statusService(Long statusID){
+	   DBAccess db= new DBAccess();
+	   boolean check=false;
+	   while(check!=true){
+		   System.out.println("trying connection");
+		   check= db.start();
+	   }
+   }
+	 public String getStatus(Long status_id){
+		   String status_desc=null;
+		   PreparedStatement pstmnt= db.con.prepareStatement("select status_desc from status where statusID = ?");
+		   pstmnt.setString(1,statusID);
+		   ResultSet rs= pstmnt.executeQuery();
+		   if(rs!=null){
+			   status_desc=rs.getString(1);
+		   }
+		   else status_desc=null;
+			   
+		   return status_desc;
+	   }
+	   
+	   
+	   return false;
+	   
+   }
+}

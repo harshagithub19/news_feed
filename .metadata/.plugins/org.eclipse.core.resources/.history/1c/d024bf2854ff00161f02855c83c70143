@@ -1,0 +1,72 @@
+package com.fetch.fbapp3.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+
+
+public class Status {
+	 private int statusID;
+	   private String status_desc;
+	   private Date created;
+	   private int author_id;
+	   private int flag;
+	   /*private int likeID;
+	   private int commentID;
+	   private String comment_desc;*/
+	   ArrayList<comment> a;
+	   public Status(){
+		   a=new ArrayList<comment>();
+	   }
+	   public Status(int statusID,String status_desc,int author_id){
+		   this.statusID=statusID;
+		   this.status_desc=status_desc;
+		   this.author_id=author_id;
+		   created=new Date();
+		   flag=1;
+		   a=new ArrayList<comment>();
+		   }
+	  
+	public int getStatusID() {
+		return statusID;
+	}
+	public void setStatusID(int statusID) {
+		this.statusID = statusID;
+	}
+	public int getAuthor_id() {
+		return author_id;
+	}
+	public void setAuthor_id(int author_id) {
+		this.author_id = author_id;
+	}
+	
+	
+	
+
+	public String getStatus_desc() {
+		return status_desc;
+	}
+	public void setStatus_desc(String status_desc) {
+		this.status_desc = status_desc;
+	}
+	public Date getCreated() {
+		return created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
+	public ArrayList<comment> getA() {
+		return a;
+	}
+	public void setA(ArrayList<comment> a) {
+		System.out.println("****hereeee******");
+		this.a = a;
+	}
+	
+}

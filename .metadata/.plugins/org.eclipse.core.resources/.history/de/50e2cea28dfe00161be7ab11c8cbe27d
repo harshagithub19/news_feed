@@ -1,0 +1,65 @@
+package com.fetch.fbapp3.resources;
+
+
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import org.bittu.first.data.SelectedLoad.User;
+import org.bittu.first.data.SelectedLoad.GetUserDataService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+
+@WebService()
+@Path("/user")
+public class UserResource {
+
+	public UserResource() {
+			}
+
+		
+		
+    @GET
+    @Path("/retrive")
+    @Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+    @WebMethod(operationName = "retrive")
+    //public User retrive(User u1) 
+    //{
+    public ArrayList<User> retrive() 
+    {
+    	
+    	System.out.println("Inside retrive method ");
+    	//String password=user_obj.getPassword();
+    			
+    	//String emailID=user_obj.getEmailID();
+		//String password=user_obj.getPassword();
+	
+		//return GetUserDataService.getUserAllData(user_obj);
+		 ArrayList<User> u1= GetUserDataService.getUserAllData();
+		 System.out.println("length is :"+u1.size());
+		//Enc.Encrpt(u1);
+		return u1;
+		   
+    }//retrive method ends here
+	
+	
+}//class ends here
+	
+

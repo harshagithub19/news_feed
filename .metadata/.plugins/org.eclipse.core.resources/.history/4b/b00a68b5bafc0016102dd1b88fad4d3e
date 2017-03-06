@@ -1,0 +1,5 @@
+package org.ex.javabrains.messenger.model;
+
+public class Status {
+
+}
